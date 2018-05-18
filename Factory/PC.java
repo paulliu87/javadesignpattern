@@ -1,3 +1,5 @@
+package facctory.model;
+
 public class PC extends Computer {
     private String ram;
     private String hdd;
