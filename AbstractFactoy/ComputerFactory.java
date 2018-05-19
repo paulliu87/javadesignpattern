@@ -1,4 +1,4 @@
-package design.abstractfactory;
+package design.factory;
 
 import design.model.Computer;
 
