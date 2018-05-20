@@ -8,7 +8,7 @@ public class TestBuilderPattern {
                                         .setGraphicCardEnabled(true)
                                         .setBluetoothEnabled(true)
                                         .build();
-
         System.out.println("Computer RAM is: " + computer.getRAM());
+        System.out.println("Computer HDD is: " + computer.getHDD());
     }
 }
