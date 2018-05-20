@@ -1,4 +1,4 @@
-package design.builder;
+package beans;
 
 public class Computer {
     private String RAM;
@@ -30,7 +30,7 @@ public class Computer {
         this.isBluetoothEnabled = builder.isBluetoothEnabled;
     }
 
-    public class ComputerBuilder {
+    public static class ComputerBuilder {
         private String RAM;
         private String HDD;
         private boolean isGraphicCarEnabled;

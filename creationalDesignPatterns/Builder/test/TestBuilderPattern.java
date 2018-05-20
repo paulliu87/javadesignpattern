@@ -1,6 +1,6 @@
-package design.test;
+package test;
 
-import design.build.Computer;
+import beans.Computer;
 
 public class TestBuilderPattern {
     public static void main(String[] args) {
@@ -8,5 +8,7 @@ public class TestBuilderPattern {
                                         .setGraphicCardEnabled(true)
                                         .setBluetoothEnabled(true)
                                         .build();
+
+        System.out.println("Computer RAM is: " + computer.getRAM());
     }
 }
