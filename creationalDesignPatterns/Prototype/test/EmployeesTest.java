@@ -13,7 +13,7 @@ public class EmployeesTest {
 
         List<String> list1 = empsNew1.getEmpList();
         list1.add("Teng");
-        List<Stirng> list2 = empsNew2.getEmpList();
+        List<String> list2 = empsNew2.getEmpList();
         list2.remove("Paul");
 
         System.out.println("emps List:" + emps.getEmpList());
