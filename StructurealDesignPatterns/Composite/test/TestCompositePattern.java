@@ -9,7 +9,7 @@ public class TestCompositePattern {
     public static void main(String[] args) {
         Shape tri1 = new Triangle();
         Shape tri2 = new Triangle();
-        Shape cir1 = new Cirlce();
+        Shape cir1 = new Circle();
 
         Drawing drawing = new Drawing();
         drawing.add(tri1);
