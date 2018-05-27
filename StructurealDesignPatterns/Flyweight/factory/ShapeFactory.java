@@ -1,6 +1,9 @@
 package factory;
 
-import java.util,HashMap;
+import java.util.HashMap;
+import beans.Shape;
+import beans.Oval;
+import beans.Line;
 
 public class ShapeFactory {
     private static final HashMap<ShapeType, Shape> shapes = new HashMap<ShapeType, Shape>();
@@ -9,11 +12,11 @@ public class ShapeFactory {
         Shape shapeImpl = shapes.get(type);
 
         if (shapeImpl == null) {
-            if (type.equals(OVAL_FILL)) {
+            if (type.equals(ShapeType.OVAL_FILL)) {
                 shapeImpl = new Oval(true);
-            } else if (type.equals(OVAL_NO_FILL)) {
+            } else if (type.equals(ShapeType.OVAL_NO_FILL)) {
                 shapeImpl = new Oval(false);
-            } else if (type.equals(LINE)) {
+            } else if (type.equals(ShapeType.LINE)) {
                 shapeImpl = new Line();
             } else {
                 shapes.put(type, shapeImpl);

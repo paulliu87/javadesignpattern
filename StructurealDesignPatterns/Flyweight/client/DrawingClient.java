@@ -2,23 +2,25 @@ package client;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.Container;
-import java.awt.ActionEvent;
-import java.awt.ActionListener;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import java.swing.JButton;
-import java.swing.JFrame;
-import java.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 import factory.ShapeFactory.ShapeType;
+import beans.Shape;
+import factory.ShapeFactory;
 
 public class DrawingClient extends JFrame {
     private static final long serialVersionUID = -1350200437285282550L;
     private final int WIDTH;
     private final int HEIGHT;
-    private static final ShapeType[] shapes = {OVAL_FILL, OVAL_NO_FILL, LINE};
-    private static final Color[] colors = {Color.RED, Color.GREEN, Color.Yellow};
+    private static final ShapeType[] shapes = {ShapeType.OVAL_FILL, ShapeType.OVAL_NO_FILL, ShapeType.LINE};
+    private static final Color[] colors = {Color.RED, Color.GREEN, Color.YELLOW};
 
     public DrawingClient(int width, int height) {
         this.WIDTH = width;
@@ -38,38 +40,38 @@ public class DrawingClient extends JFrame {
             public void actionPerformed(ActionEvent event) {
                 Graphics g = panel.getGraphics();
                 for (int i = 0; i < 20; i++) {
-                    Shape shape = ShapeFactory.getShape(getRandomeShape());
-                    shape.draw(g, getRandomX(), getRandomY(), getRandomWidth(); getRandomHeight(), getRandomColor());
+                    Shape shape = ShapeFactory.getShape(getRandomShape());
+                    shape.draw(g, getRandomX(), getRandomY(), getRandomWidth(), getRandomHeight(), getRandomColor());
                 }
             }
         });
+    }
 
-        private ShapeType getShape() {
-            return shapes[(int) (Math.random() * shapes.length)];
-        }
+    private ShapeType getRandomShape() {
+        return shapes[(int) (Math.random() * shapes.length)];
+    }
 
-        private int getRandomX() {
-            return (int) Math.random() * WIDTH;
-        }
+    private int getRandomX() {
+        return (int) Math.random() * WIDTH;
+    }
 
-        private int getRandomY() {
-            return (int) Math.random() * HEIGHT;
-        }
+    private int getRandomY() {
+        return (int) Math.random() * HEIGHT;
+    }
 
-        private int getRandomWidth() {
-            return (int) Math.random() * (WIDTH / 10);
-        }
+    private int getRandomWidth() {
+        return (int) Math.random() * (WIDTH / 10);
+    }
 
-        private int getRandomHeight() {
-            return (int) Math.random() * (HEIGHT / 10);
-        }
+    private int getRandomHeight() {
+        return (int) Math.random() * (HEIGHT / 10);
+    }
 
-        private Color getRandomColor() {
-            return colors[(int) (Math.random() * colors.length)];
-        }
+    private Color getRandomColor() {
+        return colors[(int) (Math.random() * colors.length)];
+    }
 
-        public static void main(String[] args) {
-            DrawingClient drawing = new DrawingClient(500, 600);
-        }
+    public static void main(String[] args) {
+        DrawingClient drawing = new DrawingClient(500, 600);
     }
 }

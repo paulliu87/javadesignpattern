@@ -13,16 +13,16 @@ public class Oval implements Shape {
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
-            e.printStackTrace;
+            e.printStackTrace();
         }
     }
 
     @Override
     public void draw(Graphics oval, int x1, int y1, int x2, int y2, Color color) {
         oval.setColor(color);
-        oval.drawOval(int x1, int y1, int x2, int y2);
+        oval.drawOval(x1, y1, x2, y2);
         if (fill) {
-            oval.fillOval(int x1, int y1, int x2, int y2);
+            oval.fillOval(x1, y1, x2, y2);
         }
     }
 }
